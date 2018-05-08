@@ -1,0 +1,24 @@
+<mat-tab-group class="container">
+  <mat-tab label="Curso">
+    <div fxLayout="column" fxFlex="grow">
+      <mat-toolbar fxFlex="grow">{{course.title}}</mat-toolbar>
+    </div>
+  </mat-tab>
+  <mat-tab label="Aulas">
+    <div fxLayout="column" fxFlex="grow">
+      <mat-toolbar fxFlex="grow">Aulas</mat-toolbar>
+      <mat-card fxFlex="grow">
+        <span *ngIf="course.lectures?.length === 0 || !course.lectures">Nenhuma aula cadastrada</span>
+        <mat-list role="list" *ngIf="course.lectures?.length > 0">
+          <mat-list-item role="listitem" *ngFor="let lecture of course.lectures">
+            <h3 matLine> {{lecture.title}} </h3>
+            <p matLine>
+              <span *ngIf="lecture.description.length > 0"> {{lecture.description}} </span>
+              <span *ngIf="lecture.description.length === 0 || !lecture.description"> Nenhuma descrição cadastrada </span>
+            </p>
+          </mat-list-item>
+        </mat-list>
+      </mat-card>
+    </div>
+  </mat-tab>
+</mat-tab-group>

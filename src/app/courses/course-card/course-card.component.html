@@ -1,0 +1,19 @@
+<mat-card class="course-card">
+  <mat-card-header>
+    <mat-card-title>{{course.title}}</mat-card-title>
+    <mat-card-subtitle>{{course.category.title}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="course.logo_url" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+      {{course.description}}
+    </p>
+    <p *ngIf="course.is_paid">Valor: R$ {{course.price}}</p>
+    <p *ngIf="!course.is_paid">Curso Grátis!!!</p>
+    <p>Número de Aulas: {{course.lectures.length}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="openDialog()">Mais Informações</button>
+    <button mat-button>Compartilhar</button>
+  </mat-card-actions>
+</mat-card>

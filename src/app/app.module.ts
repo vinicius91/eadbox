@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './shared/Material.module';
@@ -12,6 +13,11 @@ import { CoursesComponent } from './courses/courses.component';
 import { InfosComponent } from './infos/infos.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
+import { CourseService } from './courses/courses.service';
+import { appReducer } from './store/app.reducer';
+import { CourseCardComponent } from './courses/course-card/course-card.component';
+import { CourseTableComponent } from './courses/course-table/course-table.component';
+import { CourseInfoComponent } from './courses/course-info/course-info.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,16 +25,21 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
     CoursesComponent,
     InfosComponent,
     HeaderComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    CourseCardComponent,
+    CourseTableComponent,
+    CourseInfoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    StoreModule.forRoot({ app: appReducer })
   ],
-  providers: [],
+  entryComponents: [CourseInfoComponent],
+  providers: [CourseService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
