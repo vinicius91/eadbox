@@ -4,10 +4,9 @@ import { Store } from '@ngrx/store';
 import * as fromApp from '../store/app.reducer';
 @Injectable()
 export class CourseService {
+  constructor(private store: Store<{ app: fromApp.State }>) {}
 
-  constructor(private store: Store<{ app: fromApp.State }>) {
-
-  }
+  API_URL = 'https://viniro-me.eadbox.com/api/courses';
 
   private courses: Course[];
 
