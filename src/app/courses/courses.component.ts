@@ -3,7 +3,6 @@ import { CourseService } from './courses.service';
 import { Course } from './models/course.model';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { map } from 'rxjs/operators';
 import * as fromApp from '../store/app.reducer';
 import { data } from './models/mockdata';
 @Component({
@@ -21,7 +20,9 @@ export class CoursesComponent implements OnInit {
 
   ngOnInit() {
     // this.courses$ = this.store.map(state => state.app.courses);
-    this.courses$ = data as Course[];
-    console.log(this.courses$);
+    this.courses$ = [];
+    this.courseService
+      .getCourses()
+      .subscribe((response) => console.log(response));
   }
 }

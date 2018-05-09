@@ -18,6 +18,7 @@ import { appReducer } from './store/app.reducer';
 import { CourseCardComponent } from './courses/course-card/course-card.component';
 import { CourseTableComponent } from './courses/course-table/course-table.component';
 import { CourseInfoComponent } from './courses/course-info/course-info.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { CourseInfoComponent } from './courses/course-info/course-info.component
     MaterialModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
+    HttpClientModule
     StoreModule.forRoot({ app: appReducer })
   ],
   entryComponents: [CourseInfoComponent],
