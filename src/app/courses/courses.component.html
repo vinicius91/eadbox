@@ -11,7 +11,7 @@
 </mat-tab-group>
 
 
-<div class="container" fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="center center" fxLayoutAlign.gt-sm="space-around space-around"
+<div *ngIf="loading" class="container" fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="center center" fxLayoutAlign.gt-sm="space-around space-around"
   fxLayoutGap="20px">
   <mat-spinner fxOrder="1" class="card"></mat-spinner>
 </div>

@@ -14,14 +14,7 @@ export class CourseTableComponent implements OnInit {
 
   constructor(public dialog: MatDialog) {}
 
-  displayedColumns = [
-    'title',
-    'category',
-    'description',
-    'price',
-    'numLectures',
-    'infos'
-  ];
+  displayedColumns = ['title', 'category', 'price', 'numLectures', 'infos'];
   dataSource: any;
 
   openDialog(course: Course) {
