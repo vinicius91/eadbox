@@ -12,7 +12,8 @@ export class CourseService {
   API_URL = 'https://viniro-me.eadbox.com/api/courses';
 
   getCourses() {
-    return this.http.get<Course[]>(this.API_URL);
-    // .pipe(catchError((error: any) => Observable.throw(error.toJson())));
+    return this.http
+      .get<Course[]>(this.API_URL)
+      .pipe(catchError((error: any) => Observable.throw(error.toJson())));
   }
 }

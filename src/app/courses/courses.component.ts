@@ -11,18 +11,13 @@ import { data } from './models/mockdata';
   styleUrls: ['./courses.component.css']
 })
 export class CoursesComponent implements OnInit {
-  // courses$: Observable<Course[]>;
-  courses$: Course[];
+  courses$: Observable<Course[]>;
   constructor(
     private courseService: CourseService,
     private store: Store<{ app: fromApp.State }>
   ) {}
 
   ngOnInit() {
-    // this.courses$ = this.store.map(state => state.app.courses);
-    this.courses$ = [];
-    this.courseService
-      .getCourses()
-      .subscribe((response) => console.log(response));
+    this.courses$ = this.courseService.getCourses();
   }
 }
