@@ -1,11 +1,11 @@
-<mat-tab-group>
+<mat-tab-group *ngIf="!loading">
   <mat-tab label="Cards">
     <div class="container" fxLayout="column" fxLayout.gt-sm="row" fxLayoutAlign="center center" fxLayoutAlign.gt-sm="space-around space-around"
       fxLayoutGap="20px">
-      <app-course-card *ngFor="let course of courses$ | async" [course]="course" fxOrder="1"></app-course-card>
+      <app-course-card *ngFor="let course of courses$ " [course]="course" fxOrder="1"></app-course-card>
     </div>
   </mat-tab>
   <mat-tab label="Lista">
-    <app-course-table [courses]="courses$ | async"></app-course-table>
+    <app-course-table [courses]="courses$"></app-course-table>
   </mat-tab>
 </mat-tab-group>
