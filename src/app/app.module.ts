@@ -38,7 +38,6 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     FlexLayoutModule,
     HttpClientModule
-    StoreModule.forRoot({ app: appReducer })
   ],
   entryComponents: [CourseInfoComponent],
   providers: [CourseService],
